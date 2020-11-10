@@ -1,14 +1,16 @@
+import classes from "./Navbar.module.scss";
+
 const Navbar = () => {
     return (
-    <nav className="nav">
-        <ul>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Messages</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Music</a></li>
-        </ul>
-    </nav>
+        <nav className={classes.nav}>
+            <ul>
+                <li><a href="#" className={`${classes.item} ${classes.active}`}>Profile</a></li>
+                <li><a href="#" className={classes.item}>Messages</a></li>
+                <li><a href="#" className={classes.item}>News</a></li>
+                <li><a href="#" className={classes.item}>Music</a></li>
+            </ul>
+        </nav>
     );
 }
 
-export default Navbar
+export default Navbar;

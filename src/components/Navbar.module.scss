@@ -1,0 +1,14 @@
+$gold: gold;
+
+.nav {
+  grid-area: nav;
+  background-color: lightblue;
+}
+
+.item {
+    color: red;
+}
+
+.item.active {
+    color: $gold;
+}
