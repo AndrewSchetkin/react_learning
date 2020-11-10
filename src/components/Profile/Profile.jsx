@@ -1,3 +1,4 @@
+import MyPosts from "./MyPosts/MyPosts";
 import c from "./Profile.module.scss";
 
 const Profile = () => {
@@ -9,16 +10,9 @@ const Profile = () => {
             <div>
                 ava + desc
             </div>
-            <div>
-                My posts
-                <div>New post</div>
-                <div className="posts">
-                    <div className={c.item}>Post 1</div>
-                    <div className={c.item}>Post 2</div>
-                </div>
-            </div>
+            <MyPosts />
         </div>
-        );
+    )
 }
 
-export default Profile
+export default Profile;
