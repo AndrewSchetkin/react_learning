@@ -1,0 +1,15 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    .dialogsList {
+        .dialogPreview {
+            color: red;
+        }
+        .dialogPreview.active {
+            color: gold;
+        }
+    }
+    .dialog {
+
+    }
+}
