@@ -1,13 +1,8 @@
 import c from "./MyPosts.module.scss";
 import Post from "./Post/Post";
 
-const MyPosts = () => {
-    const posts = [
-        {message: "Hello world!", likesCnt: 1},
-        {message: "I am learning React", likesCnt: 6},
-        {message: "How are you?", likesCnt: 4},
-    ];
-    const postsHtml = posts.map(p => <Post message={p.message} likesCnt={p.likesCnt} />);
+const MyPosts = (props) => {
+    const postsHtml = props.myPosts.map((p, index) => <Post message={p.message} likesCnt={p.likesCnt} key={index}/>);
 
     return (
         <div className={c.postsContainer}>
