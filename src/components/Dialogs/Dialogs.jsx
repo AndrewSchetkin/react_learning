@@ -12,19 +12,35 @@ const DialogPreview = (props) => {
     )
 }
 
+const DialogRow = (props) => {
+    return <div className="dialog__row">{props.message}</div>
+}
+
 const Dialogs = () => {
+    const dialogs = [
+        {"id": 1, "name": "Andrey"},
+        {"id": 2, "name": "Sasha"},
+        {"id": 3, "name": "Vasya"},
+        {"id": 4, "name": "Dasha"},
+    ];
+
+    const DialogsPreviews = dialogs.map(i => <DialogPreview id={i.id} name={i.name} />);
+    
+    const messages = [
+        {"text": "Hey!"},
+        {"text": "How r u?"},
+        {"text": "c ya!"},
+    ];
+
+    const messagesHtml = messages.map(i => <DialogRow message={i.text} />);
+
     return (
         <div className={c.dialogs}>
             <div className={c.dialogsList}>
-                <DialogPreview id="1" name="Andrey"/>
-                <DialogPreview id="2" name="Sasha"/>
-                <DialogPreview id="3" name="Vasya"/>
-                <DialogPreview id="4" name="Dasha"/>
+                {DialogsPreviews}
             </div>
             <div className="dialog">
-                <div className="dialog__row">Hey!</div>
-                <div className="dialog__row">How r u?</div>
-                <div className="dialog__row">c ya!</div>
+                {messagesHtml}
             </div>
         </div>
     )

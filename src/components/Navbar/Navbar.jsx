@@ -2,14 +2,25 @@ import s from "./Navbar.module.scss";
 import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
+
+    const navlinks = [
+        { "title": "Profile", "link": "/profile/" },
+        { "title": "Messages", "link": "/dialogs/" },
+        { "title": "News", "link": "/news/" },
+        { "title": "Music", "link": "/music/" },
+        { "title": "Settings", "link": "/settings/" },
+    ];
+
+    const navLinksHtml = navlinks.map(item => 
+        <li>
+            <NavLink to={item.link} activeClassName={s.active} className={s.item}>{item.title}</NavLink>
+        </li>
+        );
+
     return (
         <nav className={s.nav}>
             <ul>
-                <li><NavLink to="/profile/" activeClassName={s.active} className={s.item}>Profile</NavLink></li>
-                <li><NavLink to="/dialogs/" activeClassName={s.active} className={s.item}>Messages</NavLink></li>
-                <li><NavLink to="/news/" activeClassName={s.active} className={s.item}>News</NavLink></li>
-                <li><NavLink to="/music/" activeClassName={s.active} className={s.item}>Music</NavLink></li>
-                <li><NavLink to="/settings/" activeClassName={s.active} className={s.item}>Settings</NavLink></li>
+                { navLinksHtml }
             </ul>
         </nav>
     );

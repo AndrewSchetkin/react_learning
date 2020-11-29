@@ -3,14 +3,14 @@ import Post from "./Post/Post";
 
 const MyPosts = () => {
     return (
-        <div>
+        <div className={c.postsContainer}>
             My posts
             <div>
                 <div>New post</div>
                 <textarea name="" id="" cols="30" rows="10"></textarea>
                 <div><button>Send</button></div>
             </div>
-            <div className="posts">
+            <div className={c.posts}>
                 <Post message="Hello world!" likesCnt="1" />
                 <Post message="I am learning React" likesCnt="5" />
                 <Post message="How are you?" likesCnt="0" />

@@ -1,15 +1,11 @@
 import MyPosts from "./MyPosts/MyPosts";
 import c from "./Profile.module.scss";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
     return (
         <div>
-            <div>
-                <img src="https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png" alt="" />
-            </div>
-            <div>
-                ava + desc
-            </div>
+            <ProfileInfo />
             <MyPosts />
         </div>
     )
