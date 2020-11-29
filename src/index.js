@@ -3,34 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-const navbarLinks = [
-  { title: "Profile", link: "/profile/" },
-  { title: "Messages", link: "/dialogs/" },
-  { title: "News", link: "/news/" },
-  { title: "Music", link: "/music/" },
-  { title: "Settings", link: "/settings/" },
-];
-const myPosts = [
-  { message: "Hello world!", likesCnt: 3 },
-  { message: "I am learning React", likesCnt: 6 },
-  { message: "How are you?", likesCnt: 4 },
-];
-const dialogs = [
-  { id: 1, name: "Andrey" },
-  { id: 2, name: "Sasha" },
-  { id: 3, name: "Vasya" },
-  { id: 4, name: "Dasha" },
-];
-const messages = [
-  { text: "Hey!" },
-  { text: "How r u?" },
-  { text: "c ya!" },
-];
+import state from './redux/state';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App navbarLinks={navbarLinks} myPosts={myPosts} dialogs={dialogs} messages={messages} />
+    <App state={state} />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -4,8 +4,8 @@ import DialogRow from "./DialogRow/DialogRow";
 
 
 const Dialogs = (props) => {
-    const DialogsPreviews = props.dialogs.map((i, index) => <DialogPreview id={i.id} name={i.name} key={index} />);
-    const messagesHtml = props.messages.map((i, index) => <DialogRow message={i.text} key={index} />);
+    const DialogsPreviews = props.state.users.map((i, index) => <DialogPreview id={i.id} name={i.name} key={index} />);
+    const messagesHtml = props.state.messages.map((i, index) => <DialogRow message={i.text} key={index} />);
 
     return (
         <div className={c.dialogs}>
