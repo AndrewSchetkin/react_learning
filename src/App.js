@@ -15,7 +15,7 @@ const App = (props) => {
       <Navbar navbarLinks={props.state.navbarLinks} />
       <div className="app-content">
         <Route path="/profile">
-          <Profile state={props.state.profile}/>
+          <Profile state={props.state.profile} addPost={props.addPost}/>
         </Route>
         <Route path="/dialogs">
           <Dialogs state={props.state.dialogs} />

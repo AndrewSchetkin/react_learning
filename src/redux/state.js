@@ -8,9 +8,9 @@ let state = {
     ],
     profile: {
         myPosts: [
-            { message: "Hello world!", likesCnt: 3 },
-            { message: "I am learning React", likesCnt: 6 },
-            { message: "How are you?", likesCnt: 4 },
+            {id: 1, message: "Hello world!", likesCnt: 3 },
+            {id: 2, message: "I am learning React", likesCnt: 6 },
+            {id: 3, message: "How are you?", likesCnt: 4 },
         ],
     },
     dialogs: {
@@ -26,6 +26,15 @@ let state = {
             { text: "c ya!" },
         ]
     }
+}
+
+export let addPost = (postMsg) => {
+    let post = {
+        id: 4, 
+        message: postMsg, 
+        likesCnt: 0
+    }
+    state.profile.myPosts.push(post);
 }
 
 export default state;
