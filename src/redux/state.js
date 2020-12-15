@@ -1,3 +1,5 @@
+import { rerenderEntirePage } from "../render";
+
 let state = {
     navbarLinks: [
         { title: "Profile", link: "/profile/" },
@@ -12,6 +14,7 @@ let state = {
             {id: 2, message: "I am learning React", likesCnt: 6 },
             {id: 3, message: "How are you?", likesCnt: 4 },
         ],
+        newMsgValue: "ok",
     },
     dialogs: {
         users: [
@@ -28,13 +31,20 @@ let state = {
     }
 }
 
-export let addPost = (postMsg) => {
+export let addPost = () => {
     let post = {
         id: 4, 
-        message: postMsg, 
+        message: state.profile.newMsgValue, 
         likesCnt: 0
     }
     state.profile.myPosts.push(post);
+    state.profile.newMsgValue = "";
+    rerenderEntirePage(state);
+}
+
+export let changePostMsg = (postMsg) => {
+    state.profile.newMsgValue = postMsg;
+    rerenderEntirePage(state);
 }
 
 export default state;
